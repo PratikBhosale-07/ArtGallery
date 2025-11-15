@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMarket - Discover Unique Artworks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">ArtMarket</a>
+            
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#" class="navbar-link">Explore</a></li>
+                <li><a href="#" class="navbar-link">Collections</a></li>
+                <li><a href="#" class="navbar-link">Artists</a></li>
+                <li><a href="#" class="navbar-link">About</a></li>
+                <li><a href="#" class="navbar-cta">Get Started</a></li>
+            </ul>
+
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <!-- Image Carousel Background -->
+        <div class="image-carousel-container">
+            <div class="image-carousel">
+                <!-- Masterpiece Slide -->
+                <div class="carousel-slide active" data-index="0">
+                    <div class="image-grid">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=500&fit=crop" alt="Classical Art">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400&h=500&fit=crop" alt="Museum Gallery">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=400&h=500&fit=crop" alt="Renaissance Painting">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=500&fit=crop" alt="Art Exhibition">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&h=500&fit=crop" alt="Classic Masterpiece">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Art Slide -->
+                <div class="carousel-slide" data-index="1">
+                    <div class="image-grid">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=500&fit=crop" alt="Digital Art">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=500&fit=crop" alt="NFT Art">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&h=500&fit=crop" alt="3D Digital">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1635322966219-b75ed372eb01?w=400&h=500&fit=crop" alt="Crypto Art">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400&h=500&fit=crop" alt="Digital Canvas">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sculpture Slide -->
+                <div class="carousel-slide" data-index="2">
+                    <div class="image-grid">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=400&h=500&fit=crop" alt="Modern Sculpture">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1580991871389-ce8e3c3a8f93?w=400&h=500&fit=crop" alt="Stone Sculpture">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&h=500&fit=crop" alt="Bronze Statue">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1566931201533-4ea2d1fa6c99?w=400&h=500&fit=crop" alt="Contemporary Sculpture">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=400&h=500&fit=crop" alt="Art Installation">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abstract Slide -->
+                <div class="carousel-slide" data-index="3">
+                    <div class="image-grid">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=500&fit=crop" alt="Abstract Art">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=500&fit=crop" alt="Color Burst">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400&h=500&fit=crop" alt="Abstract Canvas">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1583362917004-bfb8e0d18d64?w=400&h=500&fit=crop" alt="Modern Abstract">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=400&h=500&fit=crop" alt="Abstract Expression">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-overlay"></div>
+        </div>
+
+        <!-- Hero Content (overlays the images) -->
+        <div class="hero-content">
+            <h1 class="hero-heading">
+                Find your next
+                <div class="rotating-text-container">
+                    <span class="rotating-text active" data-index="0">masterpiece</span>
+                    <span class="rotating-text" data-index="1">digital art</span>
+                    <span class="rotating-text" data-index="2">sculpture</span>
+                    <span class="rotating-text" data-index="3">abstract</span>
+                </div>
+            </h1>
+
+            <div class="pagination">
+                <button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+                <button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+                <button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+                <button class="dot" data-index="3" aria-label="Go to slide 4"></button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Top Artists Section -->
+    <section class="artists-section">
+        <div class="artists-container">
+            <div class="section-header">
+                <p class="section-subtitle">Featured Creators</p>
+                <h2 class="section-title">Top Artists</h2>
+                <p class="section-description">
+                    Discover exceptional artists from around the world, each bringing their unique vision and style to our marketplace.
+                </p>
+            </div>
+
+            <div class="artists-grid">
+                <!-- Artist Card 1 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge featured">Featured</div>
+                        
+                        <!-- Name overlay (visible by default) -->
+                        <div class="artist-name-overlay">
+                            <h3>Marcus Rivera</h3>
+                            <p>Contemporary Digital Artist</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="artist-info">
+                            <h3 class="artist-name">Marcus Rivera</h3>
+                            <p class="artist-specialty">Contemporary Digital Artist</p>
+                            <p class="artist-description">
+                                Known for vibrant digital landscapes and innovative NFT collections that blend traditional art with modern technology.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">247</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">12.5K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 2 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Top Seller</div>
+                        
+                        <!-- Name overlay (visible by default) -->
+                        <div class="artist-name-overlay">
+                            <h3>Sophie Chen</h3>
+                            <p>Abstract & Mixed Media</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="artist-info">
+                            <h3 class="artist-name">Sophie Chen</h3>
+                            <p class="artist-specialty">Abstract & Mixed Media</p>
+                            <p class="artist-description">
+                                Creates stunning abstract pieces using mixed media techniques, exploring the intersection of color and emotion.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">189</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">9.8K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 3 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Rising Star</div>
+                        
+                        <!-- Name overlay (visible by default) -->
+                        <div class="artist-name-overlay">
+                            <h3>Alex Thompson</h3>
+                            <p>Sculpture & 3D Art</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="artist-info">
+                            <h3 class="artist-name">Alex Thompson</h3>
+                            <p class="artist-specialty">Sculpture & 3D Art</p>
+                            <p class="artist-description">
+                                Specializes in contemporary sculptures and 3D installations that challenge perspectives and redefine space.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">156</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">7.2K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.7</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 4 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Top Rated</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Isabella Martinez</h3>
+                            <p>Portrait Photography</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Isabella Martinez</h3>
+                            <p class="artist-specialty">Portrait Photography</p>
+                            <p class="artist-description">
+                                Captures raw emotions and authentic moments through compelling portrait photography and visual storytelling.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">312</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">15.3K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">5.0</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 5 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge featured">Featured</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>James Anderson</h3>
+                            <p>Oil Painting Master</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">James Anderson</h3>
+                            <p class="artist-specialty">Oil Painting Master</p>
+                            <p class="artist-description">
+                                Traditional oil painter creating timeless pieces inspired by classical techniques and modern subjects.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">178</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">11.2K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 6 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Trending</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Emma Wilson</h3>
+                            <p>Watercolor Artist</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Emma Wilson</h3>
+                            <p class="artist-specialty">Watercolor Artist</p>
+                            <p class="artist-description">
+                                Creates delicate watercolor landscapes and botanical illustrations with vibrant colors and flowing forms.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">225</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">8.9K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 7 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">New Talent</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Ryan Park</h3>
+                            <p>Street Art & Graffiti</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Ryan Park</h3>
+                            <p class="artist-specialty">Street Art & Graffiti</p>
+                            <p class="artist-description">
+                                Urban artist bringing street culture to canvas with bold colors and powerful social commentary.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">143</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">6.5K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.6</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 8 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge featured">Featured</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Maya Patel</h3>
+                            <p>Textile & Fiber Art</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Maya Patel</h3>
+                            <p class="artist-specialty">Textile & Fiber Art</p>
+                            <p class="artist-description">
+                                Innovative textile artist weaving cultural heritage with contemporary design in stunning fiber works.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">198</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">10.1K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 9 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Top Seller</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Lucas Bennett</h3>
+                            <p>Concept Art & Illustration</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Lucas Bennett</h3>
+                            <p class="artist-specialty">Concept Art & Illustration</p>
+                            <p class="artist-description">
+                                Creates imaginative concept art and illustrations for games, films, and publishing industries worldwide.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">267</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">13.7K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist Card 10 -->
+                <div class="artist-card">
+                    <div class="artist-image-container">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" alt="Artist Portrait" class="artist-image">
+                        <div class="artist-badge">Rising Star</div>
+                        
+                        <div class="artist-name-overlay">
+                            <h3>Nina Rodriguez</h3>
+                            <p>Ceramic & Pottery</p>
+                        </div>
+                        
+                        <div class="artist-info">
+                            <h3 class="artist-name">Nina Rodriguez</h3>
+                            <p class="artist-specialty">Ceramic & Pottery</p>
+                            <p class="artist-description">
+                                Master ceramicist crafting functional and decorative pottery with unique glazes and organic forms.
+                            </p>
+                            <div class="artist-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">134</span>
+                                    <span class="stat-label">Artworks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">5.8K</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.7</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            <div class="artist-actions">
+                                <button class="btn-primary">View Portfolio</button>
+                                <button class="btn-secondary">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Arts Section -->
+    <section class="featured-arts-section">
+        <div class="featured-arts-container">
+            <div class="section-header">
+                <p class="section-subtitle">Curated Collection</p>
+                <h2 class="section-title">Featured Artworks</h2>
+                <p class="section-description">
+                    Discover unique and inspiring artworks from talented creators around the world. Each piece tells its own story.
+                </p>
+            </div>
+
+            <div class="arts-grid">
+                <!-- Art Card 1 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$2,500</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Eternal Sunset</h3>
+                            <p>by Marcus Rivera</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Digital Art</span>
+                            <h3 class="art-title">Eternal Sunset</h3>
+                            <p class="art-creator">by Marcus Rivera</p>
+                            <p class="art-description">
+                                A breathtaking digital landscape capturing the serene beauty of twilight over rolling hills and distant mountains.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">Digital</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">4096×4096</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2025</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 2 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$3,200</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Abstract Dreams</h3>
+                            <p>by Sophie Chen</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Abstract</span>
+                            <h3 class="art-title">Abstract Dreams</h3>
+                            <p class="art-creator">by Sophie Chen</p>
+                            <p class="art-description">
+                                An explosion of vibrant colors and flowing forms that evoke emotion and imagination through abstract expression.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">Acrylic</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">36×48 in</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2024</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 3 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$4,800</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Modern Form</h3>
+                            <p>by Alex Thompson</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Sculpture</span>
+                            <h3 class="art-title">Modern Form</h3>
+                            <p class="art-creator">by Alex Thompson</p>
+                            <p class="art-description">
+                                A contemporary sculpture that challenges conventional perspectives and explores the relationship between space and form.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">Bronze</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">24×18×12</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2025</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 4 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$1,800</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Color Symphony</h3>
+                            <p>by Sophie Chen</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Abstract</span>
+                            <h3 class="art-title">Color Symphony</h3>
+                            <p class="art-creator">by Sophie Chen</p>
+                            <p class="art-description">
+                                A harmonious blend of colors dancing across the canvas, creating a visual melody that captivates the eye.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">Mixed Media</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">30×40 in</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2025</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 5 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$5,500</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Gallery Masterpiece</h3>
+                            <p>by Marcus Rivera</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Contemporary</span>
+                            <h3 class="art-title">Gallery Masterpiece</h3>
+                            <p class="art-creator">by Marcus Rivera</p>
+                            <p class="art-description">
+                                A stunning piece that combines classical techniques with modern sensibilities, perfect for any art collection.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">Oil on Canvas</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">48×60 in</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2024</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 6 -->
+                <div class="art-card">
+                    <div class="art-image-container">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=600&fit=crop" alt="Artwork" class="art-image">
+                        <div class="art-price-badge">$2,900</div>
+                        
+                        <!-- Title overlay (visible by default) -->
+                        <div class="art-title-overlay">
+                            <h3>Digital Renaissance</h3>
+                            <p>by Marcus Rivera</p>
+                        </div>
+                        
+                        <!-- Info popup (visible on hover) -->
+                        <div class="art-info">
+                            <span class="art-category">Digital Art</span>
+                            <h3 class="art-title">Digital Renaissance</h3>
+                            <p class="art-creator">by Marcus Rivera</p>
+                            <p class="art-description">
+                                A fusion of classical artistry and cutting-edge digital technology, creating a unique visual experience.
+                            </p>
+                            <div class="art-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Medium</span>
+                                    <span class="detail-value">NFT</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Size</span>
+                                    <span class="detail-value">5000×5000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Year</span>
+                                    <span class="detail-value">2025</span>
+                                </div>
+                            </div>
+                            <div class="art-actions">
+                                <button class="btn-purchase">Purchase Now</button>
+                                <button class="btn-favorite">♥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <div class="section-header">
+                <p class="section-subtitle">Browse by Style</p>
+                <h2 class="section-title">Top Categories</h2>
+                <p class="section-description">
+                    Explore our diverse collection of art styles and discover pieces that resonate with your taste.
+                </p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- Category 1: Abstract -->
+                <div class="category-card abstract" data-category="abstract">
+                    <div class="category-icon">🎨</div>
+                    <h3 class="category-name">Abstract Art</h3>
+                    <p class="category-count">124 Artworks</p>
+                </div>
+
+                <!-- Category 2: Digital Art -->
+                <div class="category-card digital" data-category="digital">
+                    <div class="category-icon">💻</div>
+                    <h3 class="category-name">Digital Art</h3>
+                    <p class="category-count">89 Artworks</p>
+                </div>
+
+                <!-- Category 3: Sculpture -->
+                <div class="category-card sculpture" data-category="sculpture">
+                    <div class="category-icon">🗿</div>
+                    <h3 class="category-name">Sculpture</h3>
+                    <p class="category-count">67 Artworks</p>
+                </div>
+
+                <!-- Category 4: Contemporary -->
+                <div class="category-card contemporary" data-category="contemporary">
+                    <div class="category-icon">🖼️</div>
+                    <h3 class="category-name">Contemporary</h3>
+                    <p class="category-count">156 Artworks</p>
+                </div>
+
+                <!-- Category 5: Photography -->
+                <div class="category-card photography" data-category="photography">
+                    <div class="category-icon">📷</div>
+                    <h3 class="category-name">Photography</h3>
+                    <p class="category-count">92 Artworks</p>
+                </div>
+
+                <!-- Category 6: Mixed Media -->
+                <div class="category-card" data-category="mixed">
+                    <div class="category-icon">🎭</div>
+                    <h3 class="category-name">Mixed Media</h3>
+                    <p class="category-count">78 Artworks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Arts Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalCategoryTitle">Abstract Art</h2>
+                <button class="modal-close" id="closeModal">×</button>
+            </div>
+            <div class="modal-arts-grid" id="modalArtsGrid">
+                <!-- Arts will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Art Detail Modal -->
+    <div class="art-detail-modal" id="artDetailModal">
+        <div class="art-detail-content">
+            <button class="modal-close" id="closeArtDetail" style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10;">×</button>
+            
+            <div class="art-detail-image-container">
+                <img src="" alt="Artwork" class="art-detail-image" id="artDetailImage">
+            </div>
+            
+            <div class="art-detail-info-container">
+                <div class="art-detail-header">
+                    <span class="art-detail-category" id="artDetailCategory">Abstract</span>
+                    <h2 class="art-detail-title" id="artDetailTitle">Artwork Title</h2>
+                    <p class="art-detail-artist" id="artDetailArtist">by Artist Name</p>
+                </div>
+                
+                <p class="art-detail-description" id="artDetailDescription">
+                    Description of the artwork will appear here.
+                </p>
+                
+                <div class="art-detail-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Medium</span>
+                        <span class="spec-value" id="artDetailMedium">Acrylic</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Size</span>
+                        <span class="spec-value" id="artDetailSize">36×48 in</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Year</span>
+                        <span class="spec-value" id="artDetailYear">2025</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Edition</span>
+                        <span class="spec-value" id="artDetailEdition">1 of 1</span>
+                    </div>
+                </div>
+                
+                <div class="art-detail-price-section">
+                    <p class="current-bid-label">Current Bid</p>
+                    <p class="current-bid-value" id="artDetailPrice">$2,500</p>
+                    <p class="bid-ends">Auction ends in 2 days, 5 hours</p>
+                </div>
+                
+                <button class="bid-button" id="placeBidButton">Place a Bid</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>ArtMarket</h3>
+                <p>
+                    A premier online marketplace connecting talented artists with collectors worldwide. 
+                    Discover, collect, and trade exceptional art pieces.
+                </p>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <span class="footer-stat-number">10K+</span>
+                        <span class="footer-stat-label">Artworks</span>
+                    </div>
+                    <div class="footer-stat">
+                        <span class="footer-stat-number">500+</span>
+                        <span class="footer-stat-label">Artists</span>
+                    </div>
+                    <div class="footer-stat">
+                        <span class="footer-stat-number">50K+</span>
+                        <span class="footer-stat-label">Collectors</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Artworks</a></li>
+                    <li><a href="#">Artists</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Collections</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ArtMarket. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
