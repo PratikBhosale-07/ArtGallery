@@ -178,12 +178,14 @@
             });
         });
 
-        // Categories Modal Functionality
+        // Category Page Functionality
         const categoryCards = document.querySelectorAll('.category-card');
-        const categoryModal = document.getElementById('categoryModal');
-        const modalCategoryTitle = document.getElementById('modalCategoryTitle');
-        const modalArtsGrid = document.getElementById('modalArtsGrid');
-        const closeModal = document.getElementById('closeModal');
+        const categoryPage = document.getElementById('categoryPage');
+        const backButton = document.getElementById('backButton');
+        const categoryNavItems = document.querySelectorAll('.category-nav-item');
+        const categoryPageTitle = document.getElementById('categoryPageTitle');
+        const categoryPageDescription = document.getElementById('categoryPageDescription');
+        const categoryArtsGrid = document.getElementById('categoryArtsGrid');
         
         const artDetailModal = document.getElementById('artDetailModal');
         const closeArtDetail = document.getElementById('closeArtDetail');
@@ -191,48 +193,91 @@
 
         let currentCategory = '';
 
-        // Open category modal
+        const categoryDescriptions = {
+            abstract: 'Explore our collection of abstract artworks that push the boundaries of traditional art, featuring bold colors and innovative compositions.',
+            digital: 'Discover cutting-edge digital art and NFTs created by talented digital artists using the latest technology and techniques.',
+            sculpture: 'Browse three-dimensional artworks crafted from various materials, showcasing the beauty of form and texture.',
+            contemporary: 'View modern artworks that reflect current artistic trends and cultural conversations in today\'s world.',
+            photography: 'Experience stunning photography capturing moments, emotions, and perspectives through the lens of talented photographers.',
+            mixed: 'Explore unique pieces combining multiple mediums and techniques, creating rich textures and compelling visual narratives.'
+        };
+
+        // Open category page
         categoryCards.forEach(card => {
             card.addEventListener('click', () => {
                 currentCategory = card.dataset.category;
-                const categoryName = card.querySelector('.category-name').textContent;
-                
-                modalCategoryTitle.textContent = categoryName;
-                displayCategoryArts(currentCategory);
-                
-                categoryModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openCategoryPage(currentCategory);
             });
         });
 
-        // Close category modal
-        closeModal.addEventListener('click', () => {
-            categoryModal.classList.remove('active');
+        // Category navigation items
+        categoryNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const category = item.dataset.category;
+                switchCategory(category);
+            });
+        });
+
+        // Back button
+        backButton.addEventListener('click', () => {
+            closeCategoryPage();
+        });
+
+        function openCategoryPage(category) {
+            currentCategory = category;
+            categoryPage.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            switchCategory(category);
+        }
+
+        function closeCategoryPage() {
+            categoryPage.classList.remove('active');
             document.body.style.overflow = 'auto';
-        });
+        }
 
-        // Close modal on outside click
-        categoryModal.addEventListener('click', (e) => {
-            if (e.target === categoryModal) {
-                categoryModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        function switchCategory(category) {
+            currentCategory = category;
+            
+            // Update active state in sidebar
+            categoryNavItems.forEach(item => {
+                if (item.dataset.category === category) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
 
-        // Display arts in category modal
+            // Update title and description
+            const categoryNames = {
+                abstract: 'Abstract Art',
+                digital: 'Digital Art',
+                sculpture: 'Sculpture',
+                contemporary: 'Contemporary',
+                photography: 'Photography',
+                mixed: 'Mixed Media'
+            };
+
+            categoryPageTitle.textContent = categoryNames[category];
+            categoryPageDescription.textContent = categoryDescriptions[category];
+
+            // Display arts
+            displayCategoryArts(category);
+        }
+
+        // Display arts in category page
         function displayCategoryArts(category) {
             const arts = artsByCategory[category] || [];
-            modalArtsGrid.innerHTML = '';
+            categoryArtsGrid.innerHTML = '';
 
             arts.forEach(art => {
                 const artCard = document.createElement('div');
-                artCard.className = 'modal-art-card';
+                artCard.className = 'category-art-card';
                 artCard.innerHTML = `
-                    <img src="${art.image}" alt="${art.title}" class="modal-art-image">
-                    <div class="modal-art-info">
-                        <h3 class="modal-art-title">${art.title}</h3>
-                        <p class="modal-art-artist">${art.artist}</p>
-                        <p class="modal-art-price">${art.price}</p>
+                    <img src="${art.image}" alt="${art.title}" class="category-art-image">
+                    <div class="category-art-info">
+                        <h3 class="category-art-title">${art.title}</h3>
+                        <p class="category-art-artist">${art.artist}</p>
+                        <p class="category-art-price">${art.price}</p>
                     </div>
                 `;
                 
@@ -240,7 +285,7 @@
                     showArtDetail(art);
                 });
                 
-                modalArtsGrid.appendChild(artCard);
+                categoryArtsGrid.appendChild(artCard);
             });
         }
 

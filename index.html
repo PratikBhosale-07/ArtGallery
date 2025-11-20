@@ -883,16 +883,62 @@
         </div>
     </section>
 
-    <!-- Category Arts Modal -->
-    <div class="modal" id="categoryModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modalCategoryTitle">Abstract Art</h2>
-                <button class="modal-close" id="closeModal">×</button>
+    <!-- Category Page -->
+    <div class="category-page" id="categoryPage">
+        <header class="category-page-header">
+            <button class="back-button" id="backButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </button>
+            <div class="category-header-info">
+                <h1 class="category-page-title" id="categoryPageTitle">Abstract Art</h1>
+                <p class="category-page-description" id="categoryPageDescription">
+                    Explore our collection of abstract artworks that push the boundaries of traditional art.
+                </p>
             </div>
-            <div class="modal-arts-grid" id="modalArtsGrid">
-                <!-- Arts will be dynamically inserted here -->
-            </div>
+        </header>
+        
+        <div class="category-page-container">
+            <!-- Sidebar -->
+            <aside class="category-sidebar">
+                <h2 class="sidebar-title">Categories</h2>
+                <nav class="category-nav">
+                    <button class="category-nav-item" data-category="abstract">
+                        <span class="category-nav-icon">🎨</span>
+                        <span class="category-nav-text">Abstract Art</span>
+                    </button>
+                    <button class="category-nav-item" data-category="digital">
+                        <span class="category-nav-icon">💻</span>
+                        <span class="category-nav-text">Digital Art</span>
+                    </button>
+                    <button class="category-nav-item" data-category="sculpture">
+                        <span class="category-nav-icon">🗿</span>
+                        <span class="category-nav-text">Sculpture</span>
+                    </button>
+                    <button class="category-nav-item" data-category="contemporary">
+                        <span class="category-nav-icon">🖼️</span>
+                        <span class="category-nav-text">Contemporary</span>
+                    </button>
+                    <button class="category-nav-item" data-category="photography">
+                        <span class="category-nav-icon">📷</span>
+                        <span class="category-nav-text">Photography</span>
+                    </button>
+                    <button class="category-nav-item" data-category="mixed">
+                        <span class="category-nav-icon">🎭</span>
+                        <span class="category-nav-text">Mixed Media</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="category-main">
+                <div class="category-arts-grid" id="categoryArtsGrid">
+                    <!-- Arts will be dynamically inserted here -->
+                </div>
+            </main>
         </div>
     </div>
 
