@@ -8,16 +8,25 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="#" class="navbar-logo">ArtMarket</a>
+            <a href="#home" class="navbar-logo">ArtMarket</a>
             
             <ul class="navbar-menu" id="navbarMenu">
-                <li><a href="#" class="navbar-link">Explore</a></li>
-                <li><a href="#" class="navbar-link">Collections</a></li>
-                <li><a href="#" class="navbar-link">Artists</a></li>
-                <li><a href="#" class="navbar-link">About</a></li>
-                <li><a href="#" class="navbar-cta">Get Started</a></li>
+                <li><a href="#home" class="navbar-link">Home</a></li>
+                <li><a href="#artists" class="navbar-link">Artists</a></li>
+                <li><a href="#categories" class="navbar-link">Categories</a></li>
+                <li><a href="#footer" class="navbar-link">About</a></li>
+                <li id="authButton">
+                    <a href="#" class="navbar-cta" id="getStartedBtn">Get Started</a>
+                    <button class="profile-button" id="profileBtn" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Profile</span>
+                    </button>
+                </li>
             </ul>
 
             <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
@@ -28,7 +37,7 @@
         </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <!-- Image Carousel Background -->
         <div class="image-carousel-container">
             <div class="image-carousel">
@@ -149,7 +158,7 @@
     </section>
 
     <!-- Top Artists Section -->
-    <section class="artists-section">
+    <section class="artists-section" id="artists">
         <div class="artists-container">
             <div class="section-header">
                 <p class="section-subtitle">Featured Creators</p>
@@ -827,7 +836,7 @@
     </section>
 
     <!-- Categories Section -->
-    <section class="categories-section">
+    <section class="categories-section" id="categories">
         <div class="categories-container">
             <div class="section-header">
                 <p class="section-subtitle">Browse by Style</p>
@@ -993,7 +1002,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-container">
             <div class="footer-about">
                 <h3>ArtMarket</h3>

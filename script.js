@@ -608,6 +608,42 @@
             });
         }
 
+        // Authentication state management
+        let isLoggedIn = false;
+
+        function updateAuthButton() {
+            const getStartedBtn = document.getElementById('getStartedBtn');
+            const profileBtn = document.getElementById('profileBtn');
+            
+            if (isLoggedIn) {
+                getStartedBtn.style.display = 'none';
+                profileBtn.style.display = 'flex';
+            } else {
+                getStartedBtn.style.display = 'inline-block';
+                profileBtn.style.display = 'none';
+            }
+        }
+
+        // Handle Get Started button click (simulate login)
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'getStartedBtn' || e.target.closest('#getStartedBtn')) {
+                e.preventDefault();
+                // Simulate login - in real app, this would open a login modal/page
+                isLoggedIn = true;
+                updateAuthButton();
+                // Optional: Show a welcome message
+                console.log('User logged in');
+            }
+            
+            if (e.target.id === 'profileBtn' || e.target.closest('#profileBtn')) {
+                // Handle profile button click - open profile menu/page
+                console.log('Profile clicked');
+                // Optional: Add logout functionality
+                // isLoggedIn = false;
+                // updateAuthButton();
+            }
+        });
+
         // Start default auto-scroll on page load
         window.addEventListener('load', () => {
             // Initialize infinite scroll by duplicating content
@@ -625,4 +661,7 @@
             // Start auto-scrolling
             artistsScrollInterval = startAutoScroll(artistsGrid, 'left');
             artsScrollInterval = startAutoScroll(artsGrid, 'left');
+            
+            // Initialize auth button state
+            updateAuthButton();
         });
