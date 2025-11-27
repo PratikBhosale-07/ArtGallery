@@ -1,4 +1,49 @@
-﻿// Art Database by Category
+﻿        // API Configuration
+        const API_BASE_URL = 'http://localhost:3001/api/';        // Fetch artworks from database
+        async function fetchArtworksFromDB(category = null) {
+            try {
+                const url = category ? `${API_BASE_URL}artworks?category=${category}` : `${API_BASE_URL}artworks`;
+                const response = await fetch(url);
+                const result = await response.json();
+                
+                if (result.success) {
+                    return result.data.map(art => ({
+                        id: art.art_id,
+                        title: art.title,
+                        artist: art.artist_name || 'Unknown Artist',
+                        price: `$${parseFloat(art.price).toFixed(2)}`,
+                        image: art.image_url,
+                        medium: art.category,
+                        size: 'Various',
+                        year: new Date(art.upload_date).getFullYear().toString(),
+                        edition: art.is_for_sale ? 'For Sale' : 'Not For Sale',
+                        description: art.description || 'No description available'
+                    }));
+                }
+                return [];
+            } catch (error) {
+                console.error('Error fetching artworks:', error);
+                return [];
+            }
+        }
+
+        // Fetch artists from database
+        async function fetchArtistsFromDB() {
+            try {
+                const response = await fetch(`${API_BASE_URL}artists`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    return result.data;
+                }
+                return [];
+            } catch (error) {
+                console.error('Error fetching artists:', error);
+                return [];
+            }
+        }
+
+        // Art Database by Category (Fallback data)
         const artsByCategory = {
             abstract: [
                 { id: 1, title: "Abstract Dreams", artist: "Sophie Chen", price: "$3,200", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=500&h=600&fit=crop", medium: "Acrylic", size: "36Ã—48 in", year: "2024", edition: "1 of 1", description: "An explosion of vibrant colors and flowing forms that evoke emotion and imagination through abstract expression." },
@@ -265,9 +310,23 @@
         }
 
         // Display arts in category page
-        function displayCategoryArts(category) {
-            const arts = artsByCategory[category] || [];
+        async function displayCategoryArts(category) {
+            categoryArtsGrid.innerHTML = '<p style="text-align: center; padding: 2rem;">Loading artworks...</p>';
+            
+            // Try to fetch from database first
+            let arts = await fetchArtworksFromDB(category);
+            
+            // Fallback to static data if database fails
+            if (arts.length === 0) {
+                arts = artsByCategory[category] || [];
+            }
+            
             categoryArtsGrid.innerHTML = '';
+
+            if (arts.length === 0) {
+                categoryArtsGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #6b7280;">No artworks found in this category.</p>';
+                return;
+            }
 
             arts.forEach(art => {
                 const artCard = document.createElement('div');
@@ -475,22 +534,22 @@
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
                     
-                    // Calculate center 50% zone
-                    const leftBoundary = rect.width * 0.25;
-                    const rightBoundary = rect.width * 0.75;
-                    const topBoundary = rect.height * 0.25;
-                    const bottomBoundary = rect.height * 0.75;
+                    // Calculate center 90% zone (5% edges for dragging)
+                    const leftBoundary = rect.width * 0.05;
+                    const rightBoundary = rect.width * 0.95;
+                    const topBoundary = rect.height * 0.05;
+                    const bottomBoundary = rect.height * 0.95;
                     
-                    // If in center 50%, don't allow drag scroll (for info interaction)
+                    // If in center 90%, don't allow drag scroll (for info interaction)
                     if (x >= leftBoundary && x <= rightBoundary && 
                         y >= topBoundary && y <= bottomBoundary) {
                         // Don't activate drag on center area or interactive elements
                         if (e.target.closest('button, a')) {
                             return;
                         }
-                        return; // Center area - no drag scroll
+                        return; // Center 90% area - no drag scroll
                     }
-                    // Border area - allow drag scroll to continue below
+                    // Only outer 10% (5% each edge) - allow drag scroll to continue below
                 }
                 
                 // Don't drag on buttons or links anywhere
@@ -538,19 +597,19 @@
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
                     
-                    // Calculate center 50% zone
-                    const leftBoundary = rect.width * 0.25;
-                    const rightBoundary = rect.width * 0.75;
-                    const topBoundary = rect.height * 0.25;
-                    const bottomBoundary = rect.height * 0.25;
+                    // Calculate center 90% zone (5% edges for dragging)
+                    const leftBoundary = rect.width * 0.05;
+                    const rightBoundary = rect.width * 0.95;
+                    const topBoundary = rect.height * 0.05;
+                    const bottomBoundary = rect.height * 0.95;
                     
-                    // Check if in center or border
+                    // Check if in center 90% or outer 10%
                     if (x >= leftBoundary && x <= rightBoundary && 
                         y >= topBoundary && y <= bottomBoundary) {
-                        // Center area - default cursor
+                        // Center 90% area - default cursor for hover interaction
                         container.style.cursor = 'default';
                     } else {
-                        // Border area - grab cursor for scrolling
+                        // Outer 10% edge area - grab cursor for scrolling
                         container.style.cursor = 'grab';
                     }
                 } else {
@@ -580,11 +639,11 @@
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
-                // Calculate center 50% zone
-                const leftBoundary = rect.width * 0.25;
-                const rightBoundary = rect.width * 0.75;
-                const topBoundary = rect.height * 0.25;
-                const bottomBoundary = rect.height * 0.75;
+                // Calculate center 90% zone (5% edges reserved for drag scrolling)
+                const leftBoundary = rect.width * 0.05;
+                const rightBoundary = rect.width * 0.95;
+                const topBoundary = rect.height * 0.05;
+                const bottomBoundary = rect.height * 0.95;
                 
                 const info = card.querySelector('.artist-info, .art-info');
                 
@@ -609,7 +668,16 @@
         }
 
         // Authentication state management
-        let isLoggedIn = false;
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        let currentUser = null;
+
+        // Load user data on page load
+        if (isLoggedIn) {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                currentUser = JSON.parse(userData);
+            }
+        }
 
         function updateAuthButton() {
             const getStartedBtn = document.getElementById('getStartedBtn');
@@ -618,29 +686,76 @@
             if (isLoggedIn) {
                 getStartedBtn.style.display = 'none';
                 profileBtn.style.display = 'flex';
+                
+                // Update profile button with user name if available
+                if (currentUser && currentUser.full_name) {
+                    const profileText = profileBtn.querySelector('.profile-text');
+                    if (profileText) {
+                        profileText.textContent = currentUser.full_name;
+                    }
+                }
             } else {
                 getStartedBtn.style.display = 'inline-block';
                 profileBtn.style.display = 'none';
             }
         }
 
-        // Handle Get Started button click (simulate login)
+        // Handle Get Started button click - redirect to auth page
         document.addEventListener('click', (e) => {
             if (e.target.id === 'getStartedBtn' || e.target.closest('#getStartedBtn')) {
                 e.preventDefault();
-                // Simulate login - in real app, this would open a login modal/page
-                isLoggedIn = true;
-                updateAuthButton();
-                // Optional: Show a welcome message
-                console.log('User logged in');
+                window.location.href = 'auth.html';
             }
             
             if (e.target.id === 'profileBtn' || e.target.closest('#profileBtn')) {
-                // Handle profile button click - open profile menu/page
-                console.log('Profile clicked');
-                // Optional: Add logout functionality
-                // isLoggedIn = false;
-                // updateAuthButton();
+                e.preventDefault();
+                // Create profile dropdown menu
+                const existingMenu = document.querySelector('.profile-dropdown');
+                if (existingMenu) {
+                    existingMenu.remove();
+                    return;
+                }
+                
+                const dropdown = document.createElement('div');
+                dropdown.className = 'profile-dropdown';
+                dropdown.innerHTML = `
+                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
+                        <span>👤</span> My Profile
+                    </div>
+                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
+                        <span>🎨</span> My Artworks
+                    </div>
+                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
+                        <span>⚙️</span> Settings
+                    </div>
+                    <div class="profile-dropdown-divider"></div>
+                    <div class="profile-dropdown-item logout-item" id="logoutBtn">
+                        <span>🚪</span> Logout
+                    </div>
+                `;
+                
+                profileBtn.appendChild(dropdown);
+                
+                // Handle logout
+                setTimeout(() => {
+                    document.getElementById('logoutBtn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        localStorage.removeItem('user');
+                        localStorage.removeItem('isLoggedIn');
+                        isLoggedIn = false;
+                        currentUser = null;
+                        updateAuthButton();
+                        dropdown.remove();
+                    });
+                }, 0);
+            }
+            
+            // Close dropdown when clicking outside
+            if (!e.target.closest('#profileBtn')) {
+                const existingMenu = document.querySelector('.profile-dropdown');
+                if (existingMenu) {
+                    existingMenu.remove();
+                }
             }
         });
 
