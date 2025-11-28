@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - ArtMarket</title>
+    <link rel="stylesheet" href="profile-styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="logo/logo-blue.png" alt="Bolunde's Art Gallery" id="navbarLogo" class="logo-img">
+            </a>
+            
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html#home" class="navbar-link">Home</a></li>
+                <li><a href="index.html#artists" class="navbar-link">Artists</a></li>
+                <li><a href="index.html#categories" class="navbar-link">Categories</a></li>
+                <li><a href="index.html#footer" class="navbar-link">Contact</a></li>
+                <li>
+                    <button class="profile-button active" id="profileBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Profile</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-picture-container">
+                    <div class="profile-picture" id="profilePicture">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-info-header">
+                        <h1 class="profile-username" id="profileUsername">username</h1>
+                        <button class="btn-edit-profile" id="editProfileBtn">Edit Profile</button>
+                        <button class="btn-upload-artwork" id="uploadArtworkBtn" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            Upload Artwork
+                        </button>
+                        <button class="btn-settings" id="settingsBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="artworksCount">0</span>
+                            <span class="stat-label">artworks</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="followersCount">0</span>
+                            <span class="stat-label">followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="followingCount">0</span>
+                            <span class="stat-label">following</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-bio">
+                        <h2 class="profile-name" id="profileName">Full Name</h2>
+                        <p class="profile-description" id="profileBio">No bio yet</p>
+                        <p class="profile-email" id="profileEmail">email@example.com</p>
+                        <p class="profile-joined">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span id="joinedDate">Joined January 2024</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Tabs -->
+            <div class="profile-tabs">
+                <button class="tab-button active" data-tab="artworks">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>ARTWORKS</span>
+                </button>
+                <button class="tab-button" data-tab="saved">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>SAVED</span>
+                </button>
+                <button class="tab-button" data-tab="tagged">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>TAGGED</span>
+                </button>
+            </div>
+
+            <!-- Artworks Grid -->
+            <div class="tab-content active" id="artworks-content">
+                <div class="artworks-grid" id="artworksGrid">
+                    <!-- Artworks will be loaded here -->
+                    <div class="no-artworks">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                        <h3>No Artworks Yet</h3>
+                        <p>Start creating and sharing your art with the world!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Tab Content -->
+            <div class="tab-content" id="saved-content">
+                <div class="artworks-grid" id="savedGrid">
+                    <div class="no-artworks">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <h3>No Saved Artworks</h3>
+                        <p>Save artworks you love to see them here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tagged Tab Content -->
+            <div class="tab-content" id="tagged-content">
+                <div class="artworks-grid" id="taggedGrid">
+                    <div class="no-artworks">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <h3>No Tagged Artworks</h3>
+                        <p>Artworks you're tagged in will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <h3>Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancelLogout">Cancel</button>
+                <button class="btn-confirm" id="confirmLogout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile-script.js"></script>
+</body>
+</html>

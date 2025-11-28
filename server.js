@@ -272,6 +272,51 @@ app.post('/api/auth/register', async (req, res) => {
     );
 });
 
+// Upload artwork
+app.post('/api/artworks/upload', (req, res) => {
+    const { 
+        artist_id, title, description, category, medium, width, height, 
+        year, price, is_for_sale, is_for_bid, min_bid_increment, 
+        bid_duration, tags, edition, image_url 
+    } = req.body;
+    
+    if (!artist_id || !title || !description || !category || !price || !image_url) {
+        return res.status(400).json({ 
+            success: false, 
+            message: 'Artist ID, title, description, category, price, and image are required' 
+        });
+    }
+    
+    const query = `
+        INSERT INTO artworks 
+        (artist_id, title, description, category, medium, width, height, year, 
+         price, is_for_sale, is_for_bid, min_bid_increment, bid_duration, 
+         tags, edition, image_url) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    
+    db.query(
+        query,
+        [
+            artist_id, title, description, category, medium || null, 
+            width || null, height || null, year || null, price, 
+            is_for_sale || 0, is_for_bid || 0, min_bid_increment || null, 
+            bid_duration || null, tags || null, edition || null, image_url
+        ],
+        (err, result) => {
+            if (err) {
+                console.error('Upload error:', err);
+                return res.status(500).json({ success: false, message: err.message });
+            }
+            res.json({ 
+                success: true, 
+                message: 'Artwork uploaded successfully',
+                artwork_id: result.insertId
+            });
+        }
+    );
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

@@ -219,11 +219,11 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
+            background: #f5f5f0;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .navbar-container {
@@ -236,15 +236,24 @@
         }
 
         .navbar-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+        
+        .navbar-logo .logo-img {
+            height: 70px;
+            width: auto;
+            transition: all 0.5s ease;
         }
 
         .navbar-logo:hover {
-            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .navbar-logo:hover .logo-img {
+            filter: brightness(1.1);
         }
 
         .navbar-menu {

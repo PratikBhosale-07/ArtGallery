@@ -149,6 +149,13 @@
             const currentSlide = slides[index];
             root.style.setProperty('--primary-color', currentSlide.primaryColor);
             root.style.setProperty('--background-color', currentSlide.backgroundColor);
+            
+            // Update logo image based on color theme
+            const logoImg = document.getElementById('navbarLogo');
+            if (logoImg) {
+                const logoColors = ['blue', 'green', 'orange', 'purple'];
+                logoImg.src = `logo/logo-${logoColors[index]}.png`;
+            }
         }
 
         /**
@@ -709,53 +716,8 @@
             
             if (e.target.id === 'profileBtn' || e.target.closest('#profileBtn')) {
                 e.preventDefault();
-                // Create profile dropdown menu
-                const existingMenu = document.querySelector('.profile-dropdown');
-                if (existingMenu) {
-                    existingMenu.remove();
-                    return;
-                }
-                
-                const dropdown = document.createElement('div');
-                dropdown.className = 'profile-dropdown';
-                dropdown.innerHTML = `
-                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
-                        <span>👤</span> My Profile
-                    </div>
-                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
-                        <span>🎨</span> My Artworks
-                    </div>
-                    <div class="profile-dropdown-item" onclick="window.location.href='#'">
-                        <span>⚙️</span> Settings
-                    </div>
-                    <div class="profile-dropdown-divider"></div>
-                    <div class="profile-dropdown-item logout-item" id="logoutBtn">
-                        <span>🚪</span> Logout
-                    </div>
-                `;
-                
-                profileBtn.appendChild(dropdown);
-                
-                // Handle logout
-                setTimeout(() => {
-                    document.getElementById('logoutBtn').addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        localStorage.removeItem('user');
-                        localStorage.removeItem('isLoggedIn');
-                        isLoggedIn = false;
-                        currentUser = null;
-                        updateAuthButton();
-                        dropdown.remove();
-                    });
-                }, 0);
-            }
-            
-            // Close dropdown when clicking outside
-            if (!e.target.closest('#profileBtn')) {
-                const existingMenu = document.querySelector('.profile-dropdown');
-                if (existingMenu) {
-                    existingMenu.remove();
-                }
+                // Redirect to profile page
+                window.location.href = 'profile.html';
             }
         });
 
